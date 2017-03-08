@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.edu.zut.personalBlog.entity.Identity;
 import cn.edu.zut.personalBlog.service.IdentityService;
@@ -31,5 +32,21 @@ public class IdentityController {
 		model.addAttribute("identity",identity);
 		return "./aboutMe";
 	}
-
+	
+	@RequestMapping("updateMyInfo")
+	 public String updateMyInfo(HttpSession session,Model model,
+			 @RequestParam("name") String name,@RequestParam("qq") String qq,
+			 @RequestParam("email") String email,@RequestParam("resume") String resume,
+			 @RequestParam("phone") String phone){
+		Identity identity= (Identity) session.getAttribute("user");
+		Identity identity2=new Identity();
+		identity2.setId(identity.getId());
+		identity2.setName(name);
+		identity2.setEmail(email);
+		identity2.setQq_num(qq);
+		identity2.setPhone(phone);
+		identity2.setResume(resume);
+		System.out.println(identity2.toString());
+		return "redirect:./aboutMe.do";
+	}
 }

@@ -48,7 +48,7 @@
                     <li><a class="logout" href="./login.do">登录</a></li>
                     </c:if>
                     <c:if test="${user ne null}">
-                     <li><a class="logout" href="./logout.do">登出</a></li>
+                     <li><a class="logout"style="background: coral;"  href="./logout.do">退出</a></li>
                     </c:if>
             	</ul>
             </div>

@@ -48,7 +48,7 @@
                     <li><a class="logout" href="./login.do">登录</a></li>
                     </c:if>
                     <c:if test="${user ne null}">
-                     <li><a class="logout" href="./logout.do">登出</a></li>
+                     <li><a class="logout"style="background: coral;"  href="./logout.do">退出</a></li>
                     </c:if>
             	</ul>
             </div>
@@ -116,6 +116,12 @@
 			<section id="main-content">
 				<section class="wrapper site-min-height">
 					<h3><i class="fa fa-angle-right"></i> 关于我</h3>
+					<c:if test="${user ne null }">
+					<div class="col-lg-10"></div>
+					<div class="col-lg-2">
+					      <a class="btn btn-danger  btn-sm"  data-toggle="modal" href="login.html#myModal">修改个人信息</a>
+					</div>
+					</c:if>
 					<div class="row mt">
 						<div class="col-lg-12">
 							   <div class="form-panel">
@@ -185,6 +191,39 @@
 			</footer>
 			<!--footer end-->
 		</section>
+		
+		      <!-- Modal -->
+		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+		              <div class="modal-dialog">
+		                  <div class="modal-content">
+		                      <div class="modal-header">
+		                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                          <h4 class="modal-title">个人信息修改</h4>
+		                      </div>
+		                      <form action="./updateMyInfo.do" method="post" >
+		                      <div class="modal-body">
+		                       <p>姓名：</p>
+		                          <input type="text" name="name" placeholder="name" class="form-control placeholder-no-fix">
+		                           <p>QQ：</p>
+		                          <input type="text" name="qq"class="form-control placeholder-no-fix">
+		                           <p>手机号：</p>
+		                          <input type="text" name="phone"class="form-control placeholder-no-fix">
+		                          <p>邮箱：</p>
+		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+		                           <p>个性签名：</p>
+		                          <input type="text" name="resume"class="form-control placeholder-no-fix">
+		                      </div>
+		                      
+		                      <div class="modal-footer">
+		                          <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+		                          <input type="submit"class="btn btn-theme"/>
+		                      </div>
+		                      </form>
+		                  </div>
+		              </div>
+		          </div>
+		          <!-- modal -->
+		
 
 		<!-- js placed at the end of the document so the pages load faster -->
 		<script src="assets/js/jquery.js"></script>
