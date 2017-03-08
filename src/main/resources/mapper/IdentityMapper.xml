@@ -3,8 +3,60 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.zut.personalBlog.dao.IdentityDao">
-	<select id="getBlogByemail" resultType="identity">
-		select * from identity where email = = #{0} and pwd = #{1}
-	</select>
 
+    <insert id="insert" >
+     insert identity(
+     id,
+     name,
+     sex,
+     qq_num,
+     phone,
+     email,
+     resume
+     )
+     values(
+       #{id},
+       #{name},
+       #{sex},
+       #{qq_num},
+       #{phone},
+       #{email},
+       #{resume}
+     )
+    </insert>
+    <update id="updateIdentity" >
+       update identity
+       <set>
+        <if test="name !=null and name !=''">
+         name=#{name},
+        </if>
+        <if test="sex !=null">
+          sex=#{sex},
+        </if>
+        <if test="qq_num !=null">
+          qq_num=#{qq_num},
+        </if>
+        <if test="phone !=null">
+          phone=#{phone},
+        </if>
+        <if test="email !=null">
+          email=#{email},
+        </if>
+        <if test="resume !=null">
+          resume=#{resume}
+        </if>
+       </set>
+       where id=#{id}
+    </update>
+    
+	<select id="getBlogByemail" resultType="identity">
+		select * from identity where email = #{email} and pwd = #{pwd}
+	</select>
+    <select id="select" resultType="identity">
+		select * from identity where name = #{name} 
+	</select>
+	
+	<select id="selectInfoById" resultType="Integer">
+	select * from identity where id = #{id} 
+	</select>
 </mapper>
