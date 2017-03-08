@@ -23,7 +23,7 @@ public interface IdentityDao {
 	  * @param id
 	  * @return
 	  */
-     int updateIdentity(int id);
+     int updateIdentity(Identity identity);
      /**
  	 * 查找信息
  	 * @param indentity
