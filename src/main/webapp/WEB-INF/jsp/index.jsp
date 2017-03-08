@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 
 	<head>
@@ -43,7 +44,12 @@
 				<div class="nav notify-row" id="top_menu"></div>
 			    <div class="top-menu">
             	<ul class="nav pull-right top-menu">
+            	    <c:if test="${user eq null }">
                     <li><a class="logout" href="./login.do">登录</a></li>
+                    </c:if>
+                    <c:if test="${user ne null}">
+                     <li><a class="logout" href="./logout.do">登出</a></li>
+                    </c:if>
             	</ul>
             </div>
 			</header>
@@ -90,7 +96,7 @@
 						</li>
 
 						<li class="mt">
-							<a href="javascript:;">
+							<a href="./aboutMe.do">
 								<i class="fa fa-user"></i>
 								<span>关于我</span>
 							</a>
