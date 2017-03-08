@@ -1,7 +1,7 @@
 package cn.edu.zut.personalBlog.service.impl;
 
-import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.edu.zut.personalBlog.dao.IdentityDao;
@@ -10,12 +10,12 @@ import cn.edu.zut.personalBlog.service.LoginService;
 @Service("LoginService")
 public class LoginServiceImpl implements LoginService{
 
-	@Resource
-	public IdentityDao identityDao;
+	@Autowired
+	private IdentityDao identityDao;
+	
 	@Override
 	public Identity login(String eamil, String pwd) {
-		 Identity identity = new Identity();
-		 identity = identityDao.getBlogByemail(eamil, pwd);
+		Identity identity = new Identity();
 		return identity;
 	}
 

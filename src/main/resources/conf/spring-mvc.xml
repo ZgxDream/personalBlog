@@ -60,10 +60,6 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/*/*.do" />
-			<mvc:exclude-mapping path="/*/*Info.do" />
-			<mvc:exclude-mapping path="/*/upTeacher.do" />
-			<mvc:exclude-mapping path="/*/upStuInfo.do" />
-			<mvc:exclude-mapping path="/*/home.do" />
 			<ref bean="loginInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
