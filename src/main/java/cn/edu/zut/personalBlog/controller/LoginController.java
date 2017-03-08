@@ -27,12 +27,16 @@ public class LoginController {
 	@Resource
 	public LoginService loginService;
 	
-	@RequestMapping("index")
-    public String index(){
-        return "./index";
-    }
+//	@RequestMapping("index")
+//    public String index(){
+//        return "./index";
+//    }
 	@RequestMapping("login")
-    public ModelAndView login(@RequestParam("p") String p,@RequestParam("u") String u,HttpSession session){
+	 public String toLogin(HttpSession session){
+		return "./login";
+	}
+	@RequestMapping("toLogin")
+    public ModelAndView toLogin(@RequestParam("p") String p,@RequestParam("u") String u,HttpSession session){
 //        resultDo = serviceFit.getEmpService().verify(u.trim(), MDUtil.MD5Tools(p.trim()),role);
 //        if (resultDo.isSuccess()){
 //            session.setAttribute("user",resultDo.getResult());
@@ -55,7 +59,7 @@ public class LoginController {
 		Identity identity = new Identity();
 		identity = loginService.login(u, p);
 		if (identity != null){
-			return new ModelAndView("redirect:./index。jsp");
+			return new ModelAndView("redirect:./index.jsp");
 			
 		}else{
 			return new ModelAndView("index","mag","账号密码错误");

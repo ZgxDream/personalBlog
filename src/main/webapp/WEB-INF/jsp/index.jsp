@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html lang="en">
 
 	<head>
@@ -7,8 +7,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="Dashboard">
 		<meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-
-		<title>DASHGUM - Bootstrap Admin Template</title>
+        <title>主页</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -44,7 +43,7 @@
 				<div class="nav notify-row" id="top_menu"></div>
 			    <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">登录</a></li>
+                    <li><a class="logout" href="./login.do">登录</a></li>
             	</ul>
             </div>
 			</header>
