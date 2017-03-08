@@ -39,7 +39,6 @@ public class LoginController {
 		identity = loginService.login(u, p);
 		if (identity != null){
 			session.setAttribute("user", identity);
-			
 			return new ModelAndView("redirect:./index.jsp");
 			
 			

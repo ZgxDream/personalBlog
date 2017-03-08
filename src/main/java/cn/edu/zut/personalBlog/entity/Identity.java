@@ -8,7 +8,7 @@ public class Identity {
 	
 	public int sex;
 	
-	public String qq_name;
+	public String qq_num;
 	
 	public String phone;
 	
@@ -42,12 +42,13 @@ public class Identity {
 		this.sex = sex;
 	}
 
-	public String getQq_name() {
-		return qq_name;
+
+	public String getQq_num() {
+		return qq_num;
 	}
 
-	public void setQq_name(String qq_name) {
-		this.qq_name = qq_name;
+	public void setQq_num(String qq_num) {
+		this.qq_num = qq_num;
 	}
 
 	public String getPhone() {
@@ -84,10 +85,10 @@ public class Identity {
 
 	@Override
 	public String toString() {
-		return "identity [id=" + id + ", name=" + name + ", sex=" + sex
-				+ ", qq_name=" + qq_name + ", phone=" + phone + ", email="
-				+ email + ", resume=" + resume + ", pwd=" + pwd + "]";
+		return "Identity [id=" + id + ", name=" + name + ", sex=" + sex
+				+ ", qq=" + qq_num + ", phone=" + phone + ", email=" + email
+				+ ", resume=" + resume + ", pwd=" + pwd + "]";
 	}
-	
+
 	
 }
