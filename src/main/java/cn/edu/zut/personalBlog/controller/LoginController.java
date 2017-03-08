@@ -33,7 +33,7 @@ public class LoginController {
 //    }
 	@RequestMapping("login")
 	 public String toLogin(HttpSession session){
-		return "./login";
+		return "./jsp/login";
 	}
 	@RequestMapping("toLogin")
     public ModelAndView toLogin(@RequestParam("p") String p,@RequestParam("u") String u,HttpSession session){

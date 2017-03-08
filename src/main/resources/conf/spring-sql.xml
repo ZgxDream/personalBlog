@@ -44,12 +44,6 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:conf/mybatis-config.xml"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
-        <property name="plugins">
-            <array>
-                <bean id="statementHandlerInterceptor" class="cn.edu.zut.graduate.interceptor.StatementHandlerInterceptor"/>
-                <bean id="resultSetHandlerInterceptor" class="cn.edu.zut.graduate.interceptor.ResultSetHandlerInterceptor"/>
-            </array>
-        </property>
     </bean>
 
 
@@ -75,7 +69,7 @@
     </tx:advice>
 
     <aop:config>
-        <aop:pointcut id="pc" expression="execution(public * cn.edu.zut.graduate.service.*.*(..))"/>
+        <aop:pointcut id="pc" expression="execution(public * cn.edu.zut.personalBlog.service.*.*(..))"/>
         <!--把事务控制在Service层-->
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pc"/>
     </aop:config>

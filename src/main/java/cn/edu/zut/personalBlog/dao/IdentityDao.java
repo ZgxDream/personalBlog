@@ -1,7 +1,9 @@
 package cn.edu.zut.personalBlog.dao;
 
-import cn.edu.zut.personalBlog.entity.Identity;
+import org.springframework.stereotype.Repository;
 
+import cn.edu.zut.personalBlog.entity.Identity;
+@Repository
 public interface IdentityDao {
 	
 	public Identity getBlogByemail(String email,String pwd);
