@@ -52,11 +52,11 @@
 	<select id="getBlogByemail" resultType="identity">
 		select * from identity where email = #{email} and pwd = #{pwd}
 	</select>
-    <select id="select" resultType="identity">
+    <select id="select" resultType="Identity">
 		select * from identity where name = #{name} 
 	</select>
 	
-	<select id="selectInfoById" resultType="Integer">
+	<select id="selectInfoById" resultType="Identity">
 	select * from identity where id = #{id} 
 	</select>
 </mapper>

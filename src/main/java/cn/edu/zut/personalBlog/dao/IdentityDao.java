@@ -17,7 +17,7 @@ public interface IdentityDao {
 	  * @param id
 	  * @return
 	  */
-	 int selectInfoById(int id);
+	 Identity selectInfoById(int id);
 	 /**
 	  * 修改博主个人信息
 	  * @param id

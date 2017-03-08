@@ -19,8 +19,8 @@ public class IdentityDaoTest {
  @Test
  public void test(){
 	 int id=3;
-     identityDao.selectInfoById(id);
-	 System.out.println(identityDao.toString());
+     Identity identity =  identityDao.selectInfoById(id);
+	 System.out.println(identity.toString());
 	 
  }
  
