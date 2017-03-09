@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import cn.edu.zut.personalBlog.entity.Category;
 import cn.edu.zut.personalBlog.entity.Logtable;
 import cn.edu.zut.personalBlog.service.CategoryService;
 import cn.edu.zut.personalBlog.service.LogtableService;
@@ -25,6 +26,7 @@ public class LogtableController {
 	
 	@Resource
 	public CategoryService categoryService;
+	
 	
 	@Resource
 	public LogtableService logtableService;	
@@ -85,5 +87,27 @@ public class LogtableController {
 		}
 		return "./myBlog";
 	}
-
+	@RequestMapping("addCategory")
+	 public String addCategory(HttpSession session,Model model,
+		@RequestParam("name") String name,@RequestParam("centent") String centent){
+		ResultDo resultDo = new ResultDo();
+		Category category = new Category();
+		category.setCa_name(name);
+		category.setCa_resume(centent);
+		category.setId((int)Math.random()*10000);
+		resultDo = categoryService.insertCategory(category);
+		return "./index";
+	}
+	@RequestMapping("myBlogAll")
+	 public String selectBlogAll(HttpSession session,Model model
+		){
+		ResultDo resultDo = new ResultDo();
+		resultDo = logtableService.selectLogtables();
+		if(resultDo.isSuccess()){
+			model.addAttribute("logtable", resultDo.getResult());
+		}else{
+			
+		}
+		return "./index";
+	}
 }

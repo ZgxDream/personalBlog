@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.edu.zut.personalBlog.entity.Identity;
 import cn.edu.zut.personalBlog.service.IdentityService;
+import cn.edu.zut.personalBlog.supervisor.ResultDo;
 
 @Controller
 @RequestMapping("/")
@@ -20,13 +21,15 @@ public class IdentityController {
 	@RequestMapping("aboutMe")
 	 public String aboutMe(HttpSession session,Model model){
 		Identity identity = new Identity();
-		identity.setId(1);
-		identity.setName("宋鎏鑫");
-		identity.setQq_num("851338190");
-		identity.setPhone("18538007606");
-		identity.setSex(0);
-        identity.setEmail("songliuxin@outlook.com");
-        identity.setResume("我们的征途是星辰大海！");
+		ResultDo resultDo = new ResultDo<>();
+		identity = (Identity) session.getAttribute("user");
+//		identity.setId(1);
+//		identity.setName("宋鎏鑫");
+//		identity.setQq_num("851338190");
+//		identity.setPhone("18538007606");
+//		identity.setSex(0);
+//        identity.setEmail("songliuxin@outlook.com");
+//        identity.setResume("我们的征途是星辰大海！");
 //		Identity identity2= (Identity) session.getAttribute("user");
 //		identity = identityService.getIdentity(identity2.id);
 		model.addAttribute("identity",identity);
