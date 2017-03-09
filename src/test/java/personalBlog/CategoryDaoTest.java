@@ -49,8 +49,7 @@ public class CategoryDaoTest {
 	@Test
 	public void test3(){
 		Category category=new Category();
-		int id=1;
-		System.out.println(categroyDao.selectAllCat(id));
+		System.out.println(categroyDao.selectAllCat(category));
 		
 		
 	}

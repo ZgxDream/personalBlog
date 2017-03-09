@@ -40,14 +40,14 @@ public class LogtableDaoTest {
 //		
 //		
 //	}
-//	@Test
-//	public void test2(){
-//		Logtable logtable=new Logtable();
-//		if(logtable !=null){
-//			System.out.println(logtableDao.selectAll(logtable));
-//		}
-//		
-//	}
+	@Test
+	public void test2(){
+		Logtable logtable=new Logtable();
+		if(logtable !=null){
+			System.out.println(logtableDao.selectAll());
+		}
+		
+	}
 	
 //	@Test
 //	public void test3(){
@@ -65,13 +65,21 @@ public class LogtableDaoTest {
 //		System.out.println(logtableDao.selectBlogById(id));
 //		
 //	}
-	@Test
-	public void test(){
-		
-		Logtable logtable=new Logtable();
-		int id=2;
-		System.out.println(logtableDao.updateLikesById(id));
-		
-		
-	}
+//	@Test
+//	public void test(){
+//		
+//		Logtable logtable=new Logtable();
+//		int id=2;
+//		System.out.println(logtableDao.updateLikesById(id));
+//		
+//		
+//	}
+//	@Test
+//	public void test6(){
+//		int id=1;
+//		int category_id=1;
+//		System.out.println(logtableDao.selectAllBlogById(id, category_id));
+//		
+//		
+//	}
 }

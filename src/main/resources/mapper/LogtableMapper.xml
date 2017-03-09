@@ -35,13 +35,7 @@
    content=#{content},
    </if>
    <if test="category_id !=null">
-   category_id=#{category_id},
-   </if>
-   <if test="number !=null">
-   number=#{number},
-   </if>
-   <if test="likes !=null">
-   likes=#{likes}
+   category_id=#{category_id}
    </if>
   </set>
   where id=#{id}
@@ -60,11 +54,15 @@
  </select>
  
  <select id="selectAllBlogById" resultType="Logtable">
- select * from logtable where category_id = #{category_id}
+ select * from logtable left join category on logtable.category_id=category.id
  </select>
  
  <update id="updateLikesById">
  update  logtable set likes=likes+1 where id=#{id}
+ </update>
+ 
+  <update id="updateNumbersById">
+ update  logtable set number=number+1 where id=#{id}
  </update>
  
  

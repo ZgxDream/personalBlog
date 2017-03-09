@@ -17,6 +17,10 @@ public class Logtable {
 	public int number;
 	
 	public int likes;
+	
+	public String ca_name;
+	
+	public String ca_resume;
 
 	public int getId() {
 		return id;
@@ -73,14 +77,29 @@ public class Logtable {
 	public void setLikes(int likes) {
 		this.likes = likes;
 	}
+    
+	public String getCa_name() {
+		return ca_name;
+	}
+
+	public void setCa_name(String ca_name) {
+		this.ca_name = ca_name;
+	}
+
+	public String getCa_resume() {
+		return ca_resume;
+	}
+
+	public void setCa_resume(String ca_resume) {
+		this.ca_resume = ca_resume;
+	}
 
 	@Override
 	public String toString() {
-		return "logtable [id=" + id + ", date=" + date + ", title=" + title
-				+ ", content=" + content + ", category_id=" + category_id
-				+ ", number=" + number + ", likes=" + likes + "]";
+		return "Logtable [id=" + id + ", date=" + date + ", title=" + title + ", content=" + content + ", category_id="
+				+ category_id + ", number=" + number + ", likes=" + likes + ", ca_name=" + ca_name + ", ca_resume="
+				+ ca_resume + "]";
 	}
-	
-	
 
+    
 }

@@ -36,17 +36,19 @@ public interface LogtableDao {
     /**
      * 查询全部博客
      */
-    List<Logtable> selectAll(Logtable logtable);
+    List<Logtable> selectAll();
     
     /**
      * 查看此类别全部博客
      * @param category_id
      * @return
      */
-    List<Logtable> selectAllBlogById(int category_id);
+    List<Logtable> selectAllBlogById(int category_id,int id);
     
-    
-    
+    /**
+     * 修改点击的次数
+     */
+    int updateNumbersById(int id);
     /**
      * 修改点赞的次数
      * @param id

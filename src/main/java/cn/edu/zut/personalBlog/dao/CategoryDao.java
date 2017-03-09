@@ -22,7 +22,7 @@ public interface CategoryDao {
 	 * @param id
 	 * @return
 	 */
-	List<Category> selectAllCat(int id);
+	List<Category> selectAllCat(Category category);
 	/**
 	 * 修改类别
 	 */

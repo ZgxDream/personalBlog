@@ -29,7 +29,7 @@
    where id=#{id}
   </update>
   <select id="selectAllCat" resultType="Category">
-   select * from category where id=#{id}
+   select * from category 
   </select>
   <delete id="deleteCateById">
   delete from category where id=#{id}
