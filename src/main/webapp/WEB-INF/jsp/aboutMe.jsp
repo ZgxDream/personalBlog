@@ -119,7 +119,8 @@
 					<c:if test="${user ne null }">
 					<div class="col-lg-10"></div>
 					<div class="col-lg-2">
-					      <a class="btn btn-danger  btn-sm"  data-toggle="modal" href="login.html#myModal">修改个人信息</a>
+					      <a class="btn btn-danger  btn-sm"  data-toggle="modal" href="login.html#myModal" 
+					      onclick="addInfo()">修改个人信息</a>
 					</div>
 					</c:if>
 					<div class="row mt">
@@ -203,15 +204,15 @@
 		                      <form action="./updateMyInfo.do" method="post" >
 		                      <div class="modal-body">
 		                       <p>姓名：</p>
-		                          <input type="text" name="name" placeholder="name" class="form-control placeholder-no-fix">
+		                          <input id="name" type="text" name="name" placeholder="name" class="form-control placeholder-no-fix">
 		                           <p>QQ：</p>
-		                          <input type="text" name="qq"class="form-control placeholder-no-fix">
+		                          <input id="qq" type="text" name="qq"class="form-control placeholder-no-fix">
 		                           <p>手机号：</p>
-		                          <input type="text" name="phone"class="form-control placeholder-no-fix">
+		                          <input  id="phone"type="text" name="phone"class="form-control placeholder-no-fix">
 		                          <p>邮箱：</p>
-		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+		                          <input id="email" type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
 		                           <p>个性签名：</p>
-		                          <input type="text" name="resume"class="form-control placeholder-no-fix">
+		                          <input id="resume"type="text" name="resume"class="form-control placeholder-no-fix">
 		                      </div>
 		                      
 		                      <div class="modal-footer">
@@ -245,7 +246,18 @@
 			$(function() {
 				$('select.styled').customSelect();
 			});
+		
+    	</script>
+		<script type="text/javascript">
+		function addInfo(){
+			$("#name").val("${identity.name}");
+			$("#qq").val("${identity.qq_num}");
+			$("#phone").val("${identity.phone}");
+			$("#email").val("${identity.email}");
+			$("#resume").val("${identity.resume}");
+		}
 		</script>
+		
 
 	</body>
 
