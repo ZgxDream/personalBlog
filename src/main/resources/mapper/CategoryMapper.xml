@@ -3,4 +3,34 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.zut.personalBlog.dao.CategoryDao">
+  <insert id="addCatById">
+    insert category(
+      id,
+      ca_name,
+      ca_resume
+    )
+    values(
+     #{id},
+     #{ca_name},
+     #{ca_resume}
+    )
+  </insert>
+  <update id="updateBlogById">
+    update category
+    <set>
+    <if test="ca_name !=null">
+    ca_name=#{ca_name},
+    </if>
+    <if test="ca_resume">
+    ca_resume=#{ca_resume}
+    </if>
+    </set>
+  where id=#{id}
+  </update>
+  <select id="selectAllCat" resultMap="Category">
+   select * from category where id=#{id}
+  </select>
+  <delete id="deleteCateById">
+  delete from category where id=#{id}
+  </delete>
 </mapper>
