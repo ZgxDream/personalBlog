@@ -16,21 +16,28 @@ public class IdentityDaoTest {
 @Autowired
  private IdentityDao identityDao;
 
- @Test
- public void test(){
-	 int id=3;
-     Identity identity =  identityDao.selectInfoById(id);
-	 System.out.println(identity.toString());
-	 
- }
- 
-
+// @Test
+// public void test(){
+//	 int id=3;
+//     Identity identity =  identityDao.selectInfoById(id);
+//	 System.out.println(identity.toString());
+//	 
+// }
+// 
+//@Test
+//public void test1(){
+//	Identity identity=new Identity();
+//	identity.setId(2);
+//	identity.setPhone("121212");
+//	identityDao.updateIdentity(identity);
+//	
+//	System.out.println(identity.toString());
+//}
 
 //@Test
 //public void test2(){
 //   
 //	Identity id=new Identity();
-//	id.setId(3);
 //	id.setName("ËÎöÌöÎ");
 //	id.setSex(0);
 //	id.setPhone("333333");
@@ -40,4 +47,5 @@ public class IdentityDaoTest {
 //	System.err.println(identityDao.toString());
 //
 //}
+
 }
