@@ -51,12 +51,12 @@
  </delete>
  
  
-<select id="selectBlogById" resultMap="Logtable">
+<select id="selectBlogById" resultType="Logtable">
  select * from logtable where id = #{id}
  </select>
  
  
- <select id="selectAllBlogById" resultMap="Logtable">
+ <select id="selectAllBlogById" resultType="Logtable">
  select * from logtable where category_id = #{category_id}
  </select>
  
