@@ -43,7 +43,7 @@ public interface LogtableDao {
      * @param category_id
      * @return
      */
-    List<Logtable> selectAllBlogById(int category_id,int id);
+    List<Logtable> selectAllBlogById(int category_id);
     
     /**
      * 修改点击的次数

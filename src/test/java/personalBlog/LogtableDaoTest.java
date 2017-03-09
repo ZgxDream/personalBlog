@@ -74,12 +74,11 @@ public class LogtableDaoTest {
 //		
 //		
 //	}
-//	@Test
-//	public void test6(){
-//		int id=1;
-//		int category_id=1;
-//		System.out.println(logtableDao.selectAllBlogById(id, category_id));
-//		
-//		
-//	}
+	@Test
+	public void test6(){
+		int category_id=1;
+		System.out.println(logtableDao.selectAllBlogById( category_id));
+		
+		
+	}
 }
