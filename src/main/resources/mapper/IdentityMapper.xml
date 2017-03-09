@@ -49,8 +49,8 @@
        where id=#{id}
     </update>
     
-	<select id="getBlogByemail" resultType="identity">
-		select * from identity where email = #{email} and pwd = #{pwd}
+	<select id="getBlogByemail" resultType="Identity">
+		select * from identity where email = #{0} and pwd = #{1}
 	</select>
     <select id="select" resultType="Identity">
 		select * from identity where name = #{name} 

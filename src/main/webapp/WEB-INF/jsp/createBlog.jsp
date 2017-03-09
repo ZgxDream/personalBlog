@@ -8,7 +8,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="Dashboard">
 		<meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-        <title>主页</title>
+		<title>主页</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -19,6 +19,8 @@
 		<link href="assets/css/style.css" rel="stylesheet">
 		<link href="assets/css/style-responsive.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
+		<!--引入富文本css-->
+		<link rel="stylesheet" type="text/css" href="dist/css/wangEditor.min.css">
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -42,17 +44,20 @@
 				<a href="index.html" class="logo"><b>菜单</b></a>
 				<!--logo end-->
 				<div class="nav notify-row" id="top_menu"></div>
-			    <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-            	    <c:if test="${user eq null }">
-                    <li><a class="logout" href="./login.do">登录</a></li>
-                    </c:if>
-                    <c:if test="${user ne null}">
-                      <li><a class="logout" href="./addBlog.do">写博客</a></li>
-                     <li><a class="logout"style="background: coral;"  href="./logout.do">退出</a></li>
-                    </c:if>
-            	</ul>
-            </div>
+				<div class="top-menu">
+					<ul class="nav pull-right top-menu">
+						<c:if test="${user eq null }">
+							<li>
+								<a class="logout" href="./login.do">登录</a>
+							</li>
+						</c:if>
+						<c:if test="${user ne null}">
+							<li>
+								<a class="logout" style="background:coral;" href="./logout.do">登出</a>
+							</li>
+						</c:if>
+					</ul>
+				</div>
 			</header>
 			<!--header end-->
 
@@ -116,111 +121,33 @@
 			<!--main content start-->
 			<section id="main-content">
 				<section class="wrapper site-min-height">
+					<h3><i class="fa fa-angle-right"></i> 新建博客</h3>
 					<div class="row mt">
-						<!--
-                        	作者：songliuxin@outlook.com
-                        	时间：2017-03-07
-                        	描述：头部背景
-                        -->
-						<div style="height: 250px; margin-top: -25px; background:url(assets/img/instagram.jpg) ;background-size:100%;" class="col-lg-12">
-							<div style="text-align:center; margin-top: 120px;">
-								<h3><font color="white">我们的征途是星辰大海</font></h3></div>
+						<div class="col-lg-6 col-sm-12">
+							<input id="title" type="text" class="form-control" placeholder="标题">
 						</div>
-						<!--数据统计 -->
-						<div class="col-lg-12">
-
-
-							<div class="row mtbox">
-								<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
-									<div class="box1">
-										<span class="li_heart"></span>
-										<h3>933</h3>
-									</div>
-									<p>博客共收到933个喜欢</p>
-								</div>
-								<div class="col-md-2 col-sm-2 box0">
-									<div class="box1">
-										<span class="li_cloud"></span>
-										<h3>48</h3>
-									</div>
-									<p>48个好友访问了此博客</p>
-								</div>
-								<div class="col-md-2 col-sm-2 box0">
-									<div class="box1">
-										<span class="li_stack"></span>
-										<h3>23</h3>
-									</div>
-									<p>博主共建了23个文集</p>
-								</div>
-								<div class="col-md-2 col-sm-2 box0">
-									<div class="box1">
-										<span class="li_news"></span>
-										<h3>110</h3>
-									</div>
-									<p>博主共发表了110篇博客</p>
-								</div>
-								<div class="col-md-2 col-sm-2 box0">
-									<div class="box1">
-										<span class="li_user"></span>
-										<h3>Hello!</h3>
-									</div>
-									<p>欢迎访问我的个人博客</p>
-								</div>
-
-							</div>
-							<!-- /row mt -->
-
+						<div class="col-lg-6 col-sm-12">
+							<select class="form-control" id="categary_id">
+								<option value="1">java学习笔记</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
 						</div>
-				        <!--数据统计end-->
-				        <!--热门文章-->
-				        <div class="col-lg-12">
-				        <! -- Blog Panel1 -->
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="content-panel pn">
-								<div id="blog-bg">
-									<div class="badge badge-popular">Top1</div>
-									<div class="blog-title">git分布式版本控制</div>
-								</div>
-								<div class="blog-text">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="./myBlog.do?blog_id=1">Read More</a></p>
-								</div>
+						<div class="col-lg-12" style="margin-top: 10px;">
+							<div id="div1" style="height: 400px;">
+								<p>请输入内容...</p>
 							</div>
 						</div>
-						<! -- Blog Panel1end -->
-						<! -- Blog Panel2 -->
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="content-panel pn">
-								<div id="blog-bg">
-									<div class="badge badge-popular">Top2</div>
-									<div class="blog-title">分布式框架</div>
-								</div>
-								<div class="blog-text">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="./myBlog.do?blog_id=2">Read More</a></p>
-								</div>
-							</div>
+						<div class="col-lg-12" style="margin-top: 10px;">
+							<div class="col-lg-11"></div>
+							<div class="col-lg-1"> <button class="btn btn-info" id="btn1">提交</button></div>
 						</div>
-						<! -- Blog Panel2end -->
-						<! -- Blog Panel3 -->
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="content-panel pn">
-								<div id="blog-bg">
-									<div class="badge badge-popular">Top3</div>
-									<div class="blog-title">Note.js</div>
-								</div>
-								<div class="blog-text">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="./myBlog.do?blog_id=3">Read More</a></p>
-								</div>
-							</div>
-						</div>
-						<! -- Blog Panel3end -->
-						
-						
-				        </div>
-				        <!--热门文章end-->
 					</div>
 
 				</section>
-				<! --/wrapper -->
+				<!--/wrapper -->
 			</section>
 			<!-- /MAIN CONTENT -->
 
@@ -249,13 +176,51 @@
 		<!--common script for all pages-->
 		<script src="assets/js/common-scripts.js"></script>
 
-		<!--script for this page-->
-
 		<script>
 			//custom select box
 
 			$(function() {
 				$('select.styled').customSelect();
+			});
+		</script>
+		<!--引入jquery和wangEditor.js-->
+		<!--注意：javascript必须放在body最后，否则可能会出现问题-->
+		<script type="text/javascript" src="dist/js/lib/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="dist/js/wangEditor.min.js"></script>
+		<!--这里引用jquery和wangEditor.js-->
+		<script type="text/javascript">
+			var editor = new wangEditor('div1');
+			editor.create();
+
+			$('#btn1').click(function() {
+				// 获取编辑器区域完整html代码
+				var html = editor.$txt.html();
+
+				// 获取编辑器纯文本内容
+				//var text = editor.$txt.text();
+
+				// 获取格式化后的纯文本
+				//var formatText = editor.$txt.formatText();
+				var temp = document.createElement("form");
+				temp.action ="./toAddBlog.do" ;
+				temp.method = "post";
+				temp.style.display = "none";
+					var opt1 = document.createElement("textarea");
+					opt1.name = "title";
+					opt1.value = $("#title").val();
+					temp.appendChild(opt1);
+					var opt2 = document.createElement("textarea");
+					opt2.name = "categary_id";
+					opt2.value = $("#categary_id").val();
+					temp.appendChild(opt2);
+					var opt3 = document.createElement("textarea");
+					opt3.name = "centent";
+					opt3.value = html;
+					temp.appendChild(opt3);
+				document.body.appendChild(temp);
+				temp.submit();
+				return temp;
+
 			});
 		</script>
 
