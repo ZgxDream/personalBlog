@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cn.edu.zut.personalBlog.entity.Identity;
 import cn.edu.zut.personalBlog.service.LoginService;
+import cn.edu.zut.personalBlog.supervisor.ResultDo;
 
 
 /**
@@ -36,9 +37,10 @@ public class LoginController {
 	@RequestMapping("toLogin")
     public ModelAndView toLogin(@RequestParam("p") String p,@RequestParam("u") String u,HttpSession session){
 		Identity identity = new Identity();
-		identity = loginService.login(u, p);
-		if (identity != null){
-			session.setAttribute("user", identity);
+		ResultDo resultDo = new ResultDo();
+		resultDo = loginService.login(u, p);
+		if (resultDo.isSuccess()){
+			session.setAttribute("user", resultDo.getResult());
 			return new ModelAndView("redirect:./index.jsp");
 			
 			

@@ -1,8 +1,8 @@
 package cn.edu.zut.personalBlog.service;
 
-import cn.edu.zut.personalBlog.entity.Identity;
+import cn.edu.zut.personalBlog.supervisor.ResultDo;
 
 public interface LoginService {
 
-	public Identity login(String eamil,String pwd);
+	ResultDo login(String eamil,String pwd);
 }

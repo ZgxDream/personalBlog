@@ -1,8 +1,7 @@
 package cn.edu.zut.personalBlog.service;
 
-import java.util.List;
-
 import cn.edu.zut.personalBlog.entity.Logtable;
+import cn.edu.zut.personalBlog.supervisor.ResultDo;
 
 public interface LogtableService {
 	
@@ -12,7 +11,7 @@ public interface LogtableService {
 	 * @param logtable
 	 * @return
 	 */
-	public 	Logtable insertLogtable(Logtable logtable);
+	ResultDo insertLogtable(Logtable logtable);
 	
 	/***
 	 * 根据id查询博客内容详情
@@ -20,7 +19,7 @@ public interface LogtableService {
 	 * @param id
 	 * @return
 	 */
-	public Logtable getLogtable(int id);
+	ResultDo getLogtable(int id);
 	
 	/**
 	 * 根据博主id得到该博主的所有的博客
@@ -28,7 +27,7 @@ public interface LogtableService {
 	 * @param identityId
 	 * @return
 	 */
-	public List<Logtable> selectLogtables(int identityId);
+	ResultDo selectLogtables(int identityId);
 	
 	/**
 	 * 根据博主的id以及类别的id进行查询该类别下的所有的博客
@@ -36,7 +35,7 @@ public interface LogtableService {
 	 * @param id 博主id
 	 * @return
 	 */
-	public List<Logtable> selectLogtablesBy(int categoryId, int id);
+	ResultDo selectLogtablesBy(int categoryId, int id);
 	
 	/**
 	 * 根据博主的id查询出该博主的排名前十的博客
@@ -44,6 +43,6 @@ public interface LogtableService {
 	 * @param id
 	 * @return
 	 */
-	public List<Logtable> getLogtableTop(int id,String type);
+	ResultDo getLogtableTop(int id,String type);
 
 }

@@ -1,40 +1,39 @@
 package cn.edu.zut.personalBlog.service.impl;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import cn.edu.zut.personalBlog.entity.Logtable;
 import cn.edu.zut.personalBlog.service.LogtableService;
+import cn.edu.zut.personalBlog.supervisor.ResultDo;
 @Service("LogtableService")
 public class LogtableServiceImpl implements LogtableService{
 
 	@Override
-	public Logtable insertLogtable(Logtable logtable) {
+	public ResultDo insertLogtable(Logtable logtable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Logtable getLogtable(int id) {
+	public ResultDo getLogtable(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Logtable> selectLogtables(int identityId) {
+	public ResultDo selectLogtables(int identityId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Logtable> selectLogtablesBy(int categoryId, int id) {
+	public ResultDo selectLogtablesBy(int categoryId, int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Logtable> getLogtableTop(int id, String type) {
+	public ResultDo getLogtableTop(int id, String type) {
 		// TODO Auto-generated method stub
 		return null;
 	}

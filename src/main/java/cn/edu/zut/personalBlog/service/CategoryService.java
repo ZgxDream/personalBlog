@@ -1,8 +1,7 @@
 package cn.edu.zut.personalBlog.service;
 
-import java.util.List;
-
 import cn.edu.zut.personalBlog.entity.Category;
+import cn.edu.zut.personalBlog.supervisor.ResultDo;
 /**
  * @author zgx
  */
@@ -13,18 +12,18 @@ public interface CategoryService {
 	 * @param category
 	 * @return
 	 */
-	public int insertCategory(Category category);
+	ResultDo insertCategory(Category category);
 	
 	/**
 	 * 得到全部的类别类型
 	 * @return
 	 */
-	public List<Category> selectCategory();
+	ResultDo  selectCategory();
 	
 	/**
 	 * 根据i的查询到类别
 	 * @param id
 	 * @return
 	 */
-	public Category getCategoryById(int id);
+	ResultDo  getCategoryById(int id);
 }
