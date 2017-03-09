@@ -25,5 +25,5 @@ public interface CategoryService {
 	 * @param id
 	 * @return
 	 */
-	ResultDo  getCategoryById(int id);
+	ResultDo  deletrCategoryById(int id);
 }

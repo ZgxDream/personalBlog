@@ -44,10 +44,18 @@ public class CategoryServiceImpl implements CategoryService{
 	}
 
 	@Override
-	public ResultDo getCategoryById(int id) {
+	public ResultDo deletrCategoryById(int id) {
 		ResultDo resultDo = new ResultDo<>();
+		int  succ = 0;
 		Category category = new Category();
-		return null;
+		succ = categoryDao.deleteCateById(id);
+		if (succ != 0){
+			resultDo.setResult(succ);
+			resultDo.setSuccess(true);
+		} else {
+			resultDo.setMessage("删除失败");
+		}
+		return resultDo;
 	}
 
 }

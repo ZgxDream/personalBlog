@@ -11,7 +11,7 @@ public interface LogtableService {
 	 * @param logtable
 	 * @return
 	 */
-	ResultDo insertLogtable(Logtable logtable);
+	ResultDo insertLogtable(String title,  int type_id ,String centent);
 	
 	/***
 	 * 根据id查询博客内容详情
@@ -27,7 +27,7 @@ public interface LogtableService {
 	 * @param identityId
 	 * @return
 	 */
-	ResultDo selectLogtables(int identityId);
+	ResultDo selectLogtables();
 	
 	/**
 	 * 根据博主的id以及类别的id进行查询该类别下的所有的博客
@@ -35,7 +35,7 @@ public interface LogtableService {
 	 * @param id 博主id
 	 * @return
 	 */
-	ResultDo selectLogtablesBy(int categoryId, int id);
+	ResultDo selectLogtablesBy(int id);
 	
 	/**
 	 * 根据博主的id查询出该博主的排名前十的博客
@@ -43,6 +43,15 @@ public interface LogtableService {
 	 * @param id
 	 * @return
 	 */
-	ResultDo getLogtableTop(int id,String type);
+	ResultDo getLogtableTop(String type);
+	
+	/**
+	 * 修改点赞数据或者是点击量
+	 * @param type 0为修改点击量 1为修改点赞数
+	 * @param number
+	 * @param id 该id为博客id
+	 * @return
+	 */
+	ResultDo updateLogtable(int type,int number,int id);
 
 }
