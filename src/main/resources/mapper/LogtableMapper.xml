@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.zut.personalBlog.dao.LogtableDao">
  <insert id="addBlogById">
-  insert lotable(
+  insert logtable(
   id,
    date,
    title,
@@ -55,13 +55,16 @@
  select * from logtable where id = #{id}
  </select>
  
+ <select id="selectAll" resultType="Logtable">
+ select * from logtable 
+ </select>
  
  <select id="selectAllBlogById" resultType="Logtable">
  select * from logtable where category_id = #{category_id}
  </select>
  
  <update id="updateLikesById">
- update from logtable set likes=likes+1 where id=#{id}
+ update  logtable set likes=likes+1 where id=#{id}
  </update>
  
  

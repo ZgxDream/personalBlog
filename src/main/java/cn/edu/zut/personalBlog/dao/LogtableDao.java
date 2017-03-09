@@ -32,12 +32,21 @@ public interface LogtableDao {
 	 * @return
 	 */
     Logtable selectBlogById(int id);
+    
+    /**
+     * 查询全部博客
+     */
+    List<Logtable> selectAll(Logtable logtable);
+    
     /**
      * 查看此类别全部博客
      * @param category_id
      * @return
      */
     List<Logtable> selectAllBlogById(int category_id);
+    
+    
+    
     /**
      * 修改点赞的次数
      * @param id
