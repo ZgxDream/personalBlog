@@ -3,4 +3,66 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.zut.personalBlog.dao.LogtableDao">
+ <insert id="addBlogById">
+  insert lotable(
+  id,
+   date,
+   title,
+   content,
+   category_id,
+   number,
+   likes
+  )values(
+  #{id},
+  #{date},
+  #{title},
+  #{content},
+  #{category_id},
+  #{number},
+  #{likes}
+  )
+ </insert>
+ <update id="updateBlogById">
+  update logtable
+  <set>
+   <if test="date !=null">
+    date=#{date},
+   </if>
+   <if test="title !=null">
+   title=#{title},
+   </if>
+   <if test="content !=null">
+   content=#{content},
+   </if>
+   <if test="category_id !=null">
+   category_id=#{category_id},
+   </if>
+   <if test="number !=null">
+   number=#{number},
+   </if>
+   <if test="likes !=null">
+   likes=#{likes}
+   </if>
+  </set>
+  where id=#{id}
+ </update>
+ <delete id="deleteBlogById">
+ delete from logtable where id=#{id}
+ </delete>
+ 
+ 
+<select id="selectBlogById" resultMap="Logtable">
+ select * from logtable where id = #{id}
+ </select>
+ 
+ 
+ <select id="selectAllBlogById" resultMap="Logtable">
+ select * from logtable where category_id = #{category_id}
+ </select>
+ 
+ <update id="updateLikesById">
+ update from logtable set likes=likes+1 where id=#{id}
+ </update>
+ 
+ 
 </mapper>
